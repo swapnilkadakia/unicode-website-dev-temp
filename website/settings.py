@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'projects',
     'blog',
     'events',
+    'newsletter',
     'frontend',
 ]
 
