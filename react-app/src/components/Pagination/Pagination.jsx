@@ -52,7 +52,7 @@ class MyPagination extends Component {
         window.addEventListener("resize", this.onresize);
         return (
                 <div className="position2" style={{width: `${this.state.width}px`}} id="one" >
-                    <Pagination onChange={this.onChange} current={this.state.current} total={100} />
+                    <Pagination onChange={this.onChange} current={this.state.current} total={this.props.width} />
                 </div>
         );
       }

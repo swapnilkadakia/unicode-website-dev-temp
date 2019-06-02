@@ -5,7 +5,9 @@ import MessageIcon from '@material-ui/icons/Message';
 import MediaQuery from 'react-responsive';
 
 class Responses extends Component {
-    state = {  }
+    state = { 
+        responseCard: []
+     }
     style={
         paper:{
             padding: "2%",
@@ -33,7 +35,25 @@ class Responses extends Component {
             lineHeight: "33px"
         }
     }
-    render() { 
+    componentDidUpdate=(prevProps,prevState)=>{
+        if(prevProps!=this.props){
+            this.setState({responseCard: this.props.res})
+        }
+    }
+    render() {
+        console.log(this.state)
+        var renderComment=""
+        if(this.state.responseCard!==""){
+            renderComment=this.state.responseCard.map((data)=>{
+                return(
+                    <CommentCard
+                    author={data.author}
+                    text={data.text}
+                    />
+                    )
+            }
+            )
+        }
         return ( 
             <React.Fragment>
                 <div  style={this.style.heading}>Responses</div>
@@ -68,9 +88,7 @@ class Responses extends Component {
                 </MediaQuery>
 
                 </Paper>
-
-                <CommentCard />
-                <CommentCard />
+                {renderComment}
             </React.Fragment>
          );
     }
