@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'events',
     'newsletter',
     'frontend',
+    'postreview',
 ]
 
 MIDDLEWARE = [

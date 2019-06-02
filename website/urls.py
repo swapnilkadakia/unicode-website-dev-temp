@@ -25,6 +25,8 @@ urlpatterns = [
     path('projects/', include('projects.urls', namespace='projects')),
     path('api/projects/', include('projects.api.urls', namespace='projects-api')),
     path('events/', include('events.urls', namespace='events')),
+    path('postreview/', include('postreview.urls', namespace='postreview')),
+    path('api/postreview/', include('postreview.api.urls', namespace='postreview-api')),
     path('api/events/', include('events.api.urls', namespace='events-api')),
     path('api/reach/', include('newsletter.api.urls', namespace='newsletter-api')),
     path('', include('frontend.urls')),
