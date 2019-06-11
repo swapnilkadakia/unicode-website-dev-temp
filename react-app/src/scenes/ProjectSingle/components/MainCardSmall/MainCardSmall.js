@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-import {styles} from '../../components/MainCard/styles/styles';
+import {styles} from '../MainCard/styles/styles';
 import { Grid } from '@material-ui/core';
 import '../../../../css/fonts.css';
 import ImageGrid from '../ImageGrid/ImageGrid';
 
-class MainCard extends Component{
+class MainCardSmall extends Component{
     styles={
         title:{
             color: "#000",
@@ -51,4 +51,4 @@ class MainCard extends Component{
     }
 }
 
-export default MainCard;
+export default MainCardSmall;

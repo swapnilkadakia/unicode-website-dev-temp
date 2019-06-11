@@ -27,26 +27,26 @@ class MyPagination extends Component {
         let width = document.body.clientWidth;
         let screen = width
         console.log(screen)
-        let w = document.getElementById("one").children[0].childElementCount
+        let w = document.getElementById("one")?document.getElementById("one").children[0].childElementCount:0
         w=w*5
         let percent = (w/100)*screen
         console.log(percent)
         w=percent+40
         this.setState({width: w})
         console.log(w)
-        console.log(document.getElementById("one").children[0].childElementCount)
+        // console.log(document.getElementById("one").children[0].childElementCount)
      }
       componentDidMount=()=>{
         let screen = document.body.clientWidth
         console.log(screen)
-        let w = document.getElementById("one").children[0].childElementCount
+        let w = document.getElementById("one")?document.getElementById("one").children[0].childElementCount:0
         w=w*5
         let percent = (w/100)*screen
         console.log(percent)
         w=percent+40
         this.setState({width: w})
         console.log(w)
-        console.log(document.getElementById("one").children[0].childElementCount)
+        // console.log(document.getElementById("one").children[0].childElementCount)
       }
       render() {
         window.addEventListener("resize", this.onresize);
