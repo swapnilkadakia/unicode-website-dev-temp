@@ -12,6 +12,7 @@ import axios from 'axios';
 
 class BlogApp extends Component {
     state={
+        error:[1],
         data: [],
         allData:[],
         filter: [],
@@ -37,9 +38,9 @@ class BlogApp extends Component {
             this.setState({category: c,filter:f})
         }
         else if(c==="WEB DESIGN"){
-            var f=this.filterNames("web")
+            var f=this.filterNames("design")
             console.log(f)
-            this.setState({category: "web",filter:f})
+            this.setState({category: "design",filter:f})
         }
         else if(c==="WEB DEVELOPMENT"){
             var f=this.filterNames("web")
@@ -81,7 +82,7 @@ class BlogApp extends Component {
 
     filterNames(tech){
         if(tech==="all"){
-            var all=this.state.data.filter(item => item.technologies[0]==="web"||item.technologies[0]==="app")
+            var all=this.state.data.filter(item => item.technologies[0]==="web"||item.technologies[0]==="app"||item.technologies[0]==="design")
             return all
         }
         else{
@@ -108,6 +109,14 @@ class BlogApp extends Component {
       console.log(this.state)
     //   this.getSearchData(1)
     this.filterNames("web")
+    const error=this.state.error.map((data)=>{
+        return(
+            <h2 style={{fontWeight: 300,fontSize: "48px",color: "#7c7c7c",padding: "180px 0px"}} >
+                No Results Found
+            </h2>
+            )
+    }
+    )
     const renderCard=this.state.filter.map((data)=>{
             return(
             <BlogCard
@@ -179,7 +188,7 @@ class BlogApp extends Component {
                     spacing={24} 
                     style={{width: "100%",margin: 0}}
                     >
-                        {renderCard}
+                        {this.state.filter.length?renderCard:error}
                     </Grid>
                     </Grid>
                     </Grid>

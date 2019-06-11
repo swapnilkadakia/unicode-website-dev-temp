@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Grid} from '@material-ui/core';
+import { Grid, Avatar} from '@material-ui/core';
 import ProjSection from './components/Projects/ProjSection';
+import avatar from '../Blog/components/BlogCard/images/avatar.jpg';
 import Overvview from './components/Projects/components/Overview/Overview';
 import Subscribe from './components/Subscribe/Subscribe';
 import CardHolder from './components/Projects/components/CardHolder/CardHolder';
@@ -12,11 +13,19 @@ import Video from './components/Video/Video';
 import { ParallaxProvider, Parallax, withController } from 'react-scroll-parallax';
 
 class HomePage extends Component {
-    state = {  }
+    state = { 
+        projectsData: []
+     }
+     styles={
+        avatar:{
+            width: 300,
+            height: 300
+        }
+     }
     handleLoad = () => {
         // updates cached values after image dimensions have loaded
         this.props.parallaxController.update();
-    };
+    }
     render() { 
         return ( 
             <React.Fragment>
@@ -51,7 +60,7 @@ class HomePage extends Component {
                         } >
                         <Fade cascade>
                             Section Under Construction
-                            <br/>
+                            {/* <Avatar alt={`${this.props.fname} ${this.props.lname}`} src={avatar} style={this.styles.avatar} /> */}
                             (Maybe founders)
                         </Fade>
                     </Grid>

@@ -5,6 +5,7 @@ import Flip from 'react-reveal/Flip';
 import LightSpeed from 'react-reveal/LightSpeed';
 import Rotate from 'react-reveal/Rotate';
 import Bounce from 'react-reveal/Bounce';
+import axios from 'axios';
 
 const Blue=createMuiTheme(
     {
@@ -46,6 +47,19 @@ class Subscribe extends Component {
             height: "100%",
             width: "100%"
         }
+    }
+    postData=()=>{
+        axios.post('127.0.0.1:8000/api/reach/contact/', {
+            "name": 'Sagar',
+            "email": 'sagarbagwe6699@gmail.com',
+            "message": "Sample messge"
+          })
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
     }
     render() { 
         return ( 
