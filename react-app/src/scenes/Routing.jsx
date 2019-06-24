@@ -4,6 +4,7 @@ import Header from '../components/header/header';
 import EventSingle from '../scenes/EventSingle/EventsSingle';
 import Contactpage from './Contacts/Contact_page'
 import Blog from './Blog/blogPage';
+import AboutUs from './About_us/AboutUs';
 import BlogSingle from './BlogSingle/BlogSingle';
 import ProjectsMain from './Projects/ProjectsMain';
 import Home from './Home/HomePage';
@@ -22,6 +23,7 @@ class Routing extends Component {
                         <Route path="/" component={Home} exact />
                         {/* {/* <Route path="/Event" component={EventPage} /> */}
                         <Route path="/Events" component={EventSingle} />
+                        <Route path="/AboutUs" component={AboutUs} />
                         <Route path="/Contact" component={Contactpage} />
                         <Route path="/Blog" component={Blog} />
                         <Route path="/BlogSingle" component={BlogSingle} />

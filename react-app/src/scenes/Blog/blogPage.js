@@ -3,6 +3,7 @@ import { Grid } from '@material-ui/core';
 import BlogImage from './components/BlogImg/blogImg';
 import Navbar from './components/NavBar/Navbar';
 import SearchBar from './components/SearchBar/Searchbar';
+import blogText from './components/BlogImg/images/blogText.png';
 import BlogCard from './components/BlogCard/BlogCard';
 import Pagination from '../../components/Pagination/Pagination';
 import BottomNav from './components/BottomNav/BottomNav';
@@ -143,7 +144,27 @@ class BlogApp extends Component {
             >
                 {/* Shows redBackground AND image */}
                 <Grid item xs={12}>
-                    <BlogImage />
+                    <MediaQuery minWidth={768} >
+                        <BlogImage />
+                    </MediaQuery>
+                    <MediaQuery maxWidth={768} >
+                        <div>
+                        <Grid
+                        container
+                        direction="row"
+                        justify="center"
+                        style={{background: "#FF7171"}}
+                        >
+                            <Grid item xs={12}>
+                                {/* <Grid item xs={12} style={{background: "#FF7171",height: "100vh"}} > */}
+                                    <img src={blogText} alt="#" width="30%"
+                                    style={{marginLeft: "50%",transform: "translateX(-50%)"}}
+                                    />
+                                {/* </Grid> */}
+                            </Grid>
+                        </Grid>
+                        </div>
+                    </MediaQuery>
                     <MediaQuery maxWidth={960} >
                         <BottomNav setCategory={this.setCategory} />
                     </MediaQuery>
